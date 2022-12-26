@@ -11,7 +11,7 @@
                "Access-Control-Allow-Origin" "*"
                "Access-Control-Allow-Methods" "POST,GET,OPTIONS"}
      :body {:status "success"}}
-    (= uri "/worth_doing_later")
+    (= uri "/tasks")
     {:status 200
      :headers {"Content-Type" "application/json;  charset=utf-8"
                "Access-Control-Allow-Origin" "*"
