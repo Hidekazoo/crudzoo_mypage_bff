@@ -2,7 +2,7 @@
   (:gen-class)
   (:require [ring.adapter.jetty :as jetty]
             [ring.middleware.json :as middleware]
-            [compojure.core :refer [defroutes context GET routes]]
+            [compojure.core :refer [defroutes context GET POST routes]]
             [compojure.route :as route]))
 
 (defn health [req] {:status 200
@@ -18,15 +18,22 @@
   {:status 200
    :headers {"Content-Type" "application/json;  charset=utf-8"
              "Access-Control-Allow-Origin" "*"
-             "Access-Control-Allow-Methods" "POST,GET,OPTIONS"}
+             "Access-Control-Allow-Methods" "GET,OPTIONS"}
    :body {:data [{:id "7EE6B5F1-A077-43E2-8ECD-9189BB83939B",
                   :subject "test",
                   :link "http://example.com",
                   :body "body"}]}})
 
+(defn post-task [req]
+  {:status 201
+   :headers {"Content-Type" "application/json;  charset=utf-8"
+             "Access-Control-Allow-Origin" "*"
+             "Access-Control-Allow-Methods" "POST,OPTIONS"}})
+
 (defroutes tasks-routes
   (context "/tasks" _
-    (GET "/" [req] get-tasks)))
+    (GET "/" [req] get-tasks)
+    (POST "/" [req] post-task)))
 
 (defroutes common-routes
   (route/not-found {:status 404
