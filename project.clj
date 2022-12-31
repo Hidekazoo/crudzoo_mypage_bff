@@ -6,7 +6,8 @@
   :dependencies [[org.clojure/clojure "1.10.3"]
                  [ring/ring-core "1.9.6"]
                  [ring/ring-jetty-adapter "1.8.2"]
-                 [ring/ring-json "0.5.1"]]
+                 [ring/ring-json "0.5.1"]
+                 [compojure "1.7.0"]]
   :main ^:skip-aot crudzoo-mypage-bff.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
