@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/tasks"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "data": [
+        {
+          "id": "7EE6B5F1-A077-43E2-8ECD-9189BB83939B",
+          "subject": "test",
+          "link": "http://example.com",
+          "body": "body"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST,GET,OPTIONS"
+    }
+  }
+}
